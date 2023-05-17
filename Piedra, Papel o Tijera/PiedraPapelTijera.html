@@ -9,29 +9,7 @@
     <script>
       // 1 es Piedra, 2 es Papel y 3 es Tijera
 
-      // FUNCIÓN DE ELECCIÓN ALEATORIA
-      function eleccion(min, max) {
-        return Math.round(Math.random() * (max - min) + min);
-      }
-
-      // ELECCIÓN PC
-      let pc = eleccion(1, 3);
-
-      let eleccionPc = "";
-
-      switch (pc) {
-        case 1:
-          eleccionPc = "PIEDRA";
-          break;
-        case 2:
-          eleccionPc = "PAPEL";
-          break;
-        case 3:
-          eleccionPc = "TIJERA";
-          break;
-      }
-
-      // ELECCIÓN Jugador
+      // ELECCIÓN NUMÉRICA JUGADOR
       let jugador = Number(
         prompt("Elige: 1 para PIEDRA, 2 para PAPEL o 3 para TIJERA")
       );
@@ -44,19 +22,31 @@
         );
       }
 
-      let eleccionJugador = "";
-
-      switch (jugador) {
-        case 1:
-          eleccionJugador = "PIEDRA";
-          break;
-        case 2:
-          eleccionJugador = "PAPEL";
-          break;
-        case 3:
-          eleccionJugador = "TIJERA";
-          break;
+      // FUNCIÓN DE ELECCIÓN ALEATORIA
+      function eleccionAleatoria(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
       }
+
+      // ELECCIÓN NUMÉRICA PC
+      let pc = eleccionAleatoria(1, 3);
+
+      // FUNCIÓN DE ELECCIÓN NUMÉRICA A ELECCIÓN TEXTUAL
+      function eleccionTextual(eleccionNumerica) {
+        switch (eleccionNumerica) {
+          case 1:
+            return "PIEDRA";
+          case 2:
+            return "PAPEL";
+          case 3:
+            return "TIJERA";
+        }
+      }
+
+      // ELECCIÓN TEXTUAL JUGADOR
+      let eleccionJugador = eleccionTextual(jugador);
+
+      // ELECCIÓN TEXTUAL PC
+      let eleccionPc = eleccionTextual(pc);
 
       alert("Elegiste " + eleccionJugador);
 
