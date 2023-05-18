@@ -10,9 +10,16 @@
     <section id="seleccionar-general">
       <h2>Selecciona tu general:</h2>
 
-      GENERALES
+      <label for="axioco">Axíoco</label>
+      <input type="radio" name="generales" id="axioco" />
 
-      <button>Seleccionar</button>
+      <label for="hagnon">Hagnón</label>
+      <input type="radio" name="generales" id="hagnon" />
+
+      <label for="protomaco">Protómaco</label>
+      <input type="radio" name="generales" id="protomaco" />
+
+      <button id="boton-seleccion-general">Seleccionar</button>
     </section>
 
     <section id="seleccionar-bloque-ataque">
@@ -22,9 +29,9 @@
       <p>El general enemigo tiene <span>5</span> bloques de ataque</p>
 
       <p>
-        <button>Caballería 🐴</button>
-        <button>Infantería 🤺</button>
-        <button>Arqueros 🏹</button>
+        <button id="boton-caballeria">Caballería 🐴</button>
+        <button id="boton-infanteria">Infantería 🤺</button>
+        <button id="boton-arqueros">Arqueros 🏹</button>
       </p>
     </section>
 
@@ -36,7 +43,9 @@
     </section>
 
     <section id="reiniciar">
-      <button>Reiniciar</button>
+      <button id="boton-reiniciar">Reiniciar</button>
     </section>
+
+    <script src="js/EarthEmpire.js"></script>
   </body>
 </html>
