@@ -17,7 +17,7 @@
       while (jugador !== 1 && jugador !== 2 && jugador !== 3) {
         jugador = Number(
           prompt(
-            "Solo puedes elegir tres valores: 1 (PIEDRA), 2 (PAPEL) o 3(TIJERA)"
+            "Solo puedes elegir tres valores: 1 (PIEDRA), 2 (PAPEL) o 3 (TIJERA)"
           )
         );
       }
@@ -34,11 +34,11 @@
       function eleccionTextual(eleccionNumerica) {
         switch (eleccionNumerica) {
           case 1:
-            return "PIEDRA";
+            return "PIEDRA 🥌";
           case 2:
-            return "PAPEL";
+            return "PAPEL 🧻";
           case 3:
-            return "TIJERA";
+            return "TIJERA ✂";
         }
       }
 
@@ -52,18 +52,23 @@
 
       alert("El PC eligió " + eleccionPc);
 
-      // COMBATE
-      if (jugador === pc) {
-        alert("¡¡EMPATE!!");
-      } else if (jugador === 1 && pc === 3) {
-        alert("¡¡GANASTE!!");
-      } else if (jugador === 2 && pc === 1) {
-        alert("¡¡GANASTE!!");
-      } else if (jugador === 3 && pc === 2) {
-        alert("¡¡GANASTE!!");
-      } else {
-        alert("¡¡PERDISTE!!");
+      // FUNCIÓN DE COMBATE
+      function combateJugadorPc(jugador, pc) {
+        if (jugador === pc) {
+          alert("¡¡EMPATE 🤼!!");
+        } else if (
+          (jugador === 1 && pc === 3) ||
+          (jugador === 2 && pc === 1) ||
+          (jugador === 3 && pc === 2)
+        ) {
+          alert("¡¡GANASTE 🥳!!");
+        } else {
+          alert("¡¡PERDISTE 😢!!");
+        }
       }
+
+      // COMBATE
+      combateJugadorPc(jugador, pc);
     </script>
   </body>
 </html>
